@@ -1,1 +1,2 @@
 c:\users\ponk\documents\visual studio 2012\Projects\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
