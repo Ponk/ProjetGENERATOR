@@ -24,5 +24,35 @@ namespace Client
         {
             InitializeComponent();
         }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+
+
+            // Set filter for file extension and default file extension 
+            dlg.Multiselect = true;
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text Files (*.txt)|*.txt";
+
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                // Open document 
+                string file = dlg.SafeFileName;
+                textBox1.Text = file;
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
