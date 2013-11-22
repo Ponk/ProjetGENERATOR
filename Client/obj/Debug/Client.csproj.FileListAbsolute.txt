@@ -18,3 +18,6 @@ c:\users\ponk\documents\visual studio 2012\Projects\ProjetGENERATOR\Client\bin\D
 =======
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
 >>>>>>> 1d9370d4d7adc2bea1fb25b57c23ad733f0d2ef5
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.exe
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb
