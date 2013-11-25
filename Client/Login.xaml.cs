@@ -31,6 +31,8 @@ namespace Client
 
             //connexion.generatePdf();
 
+            
+
             string test = connexion.connexionBdd();
 
             //MessageBox msg = new MessageBoxResult.(test);

@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Web.Mail;
+using System.Text;
 
 namespace WCF
 {
@@ -105,6 +107,59 @@ namespace WCF
                 fs.Close();
 
             }
+
+        /// <summary>
+        /// Send Mail for User by SMTP
+        /// </summary>
+        /// <param name="Contenu">Mail Boby</param>
+        /// <param name="Subject">Mail subject</param>
+        /// <param name="MailTo">Mail to adress</param>
+        /// <param name="MailFrom">Mail from adress</param>
+        /// <param name="SMTPServer">SMTP Server to use</param>
+        /// <param name="InHTML">Body Mail in HTML or not</param>
+        /// <returns>Send Mail sent OK ou Error</returns>
+
+            public string sendMail(StringBuilder Contenu, string Subject, string MailTo, string MailFrom, string SMTPServer, bool InHTML)
+            {
+                string retour = string.Empty;
+                MailMessage msg = null;
+                System.Text.Encoding myEncoding = System.Text.Encoding.GetEncoding("iso-8859-1");
+                try
+                {
+                    msg = new MailMessage();
+                    msg.Body = Contenu.ToString();
+                    msg.BodyEncoding = myEncoding;
+                    if (InHTML)
+                    {
+                        msg.BodyFormat = MailFormat.Html;
+                    }
+                    else
+                    {
+                        msg.BodyFormat = MailFormat.Text;
+                    }
+
+                    msg.Subject = Subject;
+                    msg.From = MailFrom;
+                    msg.To = MailTo;
+                    SmtpMail.SmtpServer = SMTPServer;
+                    SmtpMail.Send(msg);
+                    retour = "Mail sent to " + MailTo;
+                }
+                catch(Exception ex)
+                {
+                    retour = "Error in Sendmail function - Details : "+ ex.ToString();
+                }
+                finally
+	            {
+		            msg = null;
+		            myEncoding = null;
+	            }
+	            return retour;
+ 
+
+
+                }
+
                
             
             
