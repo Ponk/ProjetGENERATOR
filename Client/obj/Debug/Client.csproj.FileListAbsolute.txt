@@ -21,3 +21,5 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.c
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.exe
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.exe
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb

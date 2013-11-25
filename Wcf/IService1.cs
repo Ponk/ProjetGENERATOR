@@ -3,25 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
+using System.Collections;
+using System.IO;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Wcf
+namespace WCF
 {
     // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom d'interface "IService1" à la fois dans le code et le fichier de configuration.
     [ServiceContract]
     public interface IService1
     {
-        [OperationContract]
-        string GetData(int value);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        string decrypter(string cheminFichier);
+
+        [OperationContract]
+        string authentification(string login, string mdp, string token);
 
         // TODO: ajoutez vos opérations de service ici
     }
 
-    // Utilisez un contrat de données (comme illustré dans l'exemple ci-dessous) pour ajouter des types composites aux opérations de service.
-    // Vous pouvez ajouter des fichiers XSD au projet. Une fois le projet généré, vous pouvez utiliser directement les types de données qui y sont définis, avec l'espace de noms "Wcf.ContractType".
+
+    // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
     [DataContract]
     public class CompositeType
     {
