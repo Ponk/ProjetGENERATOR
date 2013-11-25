@@ -9,18 +9,34 @@ namespace WCF
     public class CAD
     {
         SqlConnection maConnexion = null;
-        string login = "user";
-        string mdp = "user123";
+        string serveur;
+        string bdd;
+        string login;
+        string mdp;
 
-        public CAD()
+        public CAD(string serveur, string bdd, string login, string mdp)
         {
-           
+            this.serveur = serveur;
+            this.bdd = bdd;
+            this.login = login;
+            this.mdp = mdp;
         }
 
-        public string connexion()
+        public string connexionBdd()
         {
-
-
+            try
+            {
+                
+                maConnexion = new SqlConnection("Data Source= '" + serveur + "';Initial Catalog= '" + bdd + "';Integrated Security=True;User Id= '" + login + "';Password= '" + mdp + "'");
+                SqlCommand maCommande = new SqlCommand();
+                maCommande.Connection = maConnexion;
+                maConnexion.Open();
+            }
+            catch
+            {
+                return "Connexion failed";
+            }
+            
             return "Connexion réussie";
         }
 
