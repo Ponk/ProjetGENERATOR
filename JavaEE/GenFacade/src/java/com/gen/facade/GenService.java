@@ -36,7 +36,7 @@ import javax.jms.Session;
 public class GenService {
 
     Connection cnx;
-    
+    int count = 10000;
     @Resource(mappedName = "jms/queueCF")
     private QueueConnectionFactory factory;
     
@@ -72,7 +72,9 @@ public class GenService {
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public boolean processSendDocument(@WebParam(name = "name") String name, @WebParam(name = "content") String content, @WebParam(name = "key") String key)
     {
-        System.out.println(name +" envoyé avec succès !");
+        //System.out.println(name +" envoyé avec succès !");
+        System.out.println("test code : " + count);
+        count--;
         sendDocument(name, content, key);
         return true;
     }
@@ -86,6 +88,8 @@ public class GenService {
             Document document = new Document(name, content, key);  
             ObjectMessage obj = session.createObjectMessage(document);
             producer.send(obj);
+            producer.close();
+            session.close();
         }
         catch(JMSException ex)
         {

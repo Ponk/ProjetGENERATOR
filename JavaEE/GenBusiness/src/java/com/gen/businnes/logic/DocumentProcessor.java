@@ -8,14 +8,15 @@ package com.gen.businnes.logic;
 import business.domain.Document;
 import com.gen.data.cad.CAD;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.PostConstruct;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.jms.JMSException;
@@ -43,50 +44,54 @@ public class DocumentProcessor implements MessageListener {
     public String DocContent;
     public String DocKey;
     public String[] words;
+    public List<String> dico;
+    public boolean isDicoLoaded = false;
     
     public CAD cad = new CAD("jdbc:mysql://localhost/dictionnairebdd", "root", "");
 
     public DocumentProcessor() throws SQLException, ClassNotFoundException {
-
-    }
-
-    /*private void LoadDictionnary() throws SQLException, ClassNotFoundException
-     {
-     this.cad = new CAD("jdbc:mysql://localhost:8080/dictionnairebdd", "root", "");
-
-     cad.OpenConnection();
         
-     //PreparedStatement ps = CAD.connect.prepareStatement("SELECT MOT_DICTIONNAIRE FROM t_dictionnaire WHERE ID_DICTIONNAIRE = ?");
-     Statement ps = CAD.connect.createStatement();
-     //ps.setInt(1, 18);
-     //CAD.rs = ps.executeQuery();
-     CAD.rs = ps.executeQuery("SELECT MOT_DICTIONNAIRE FROM t_dictionnaire WHERE ID_DICTIONNAIRE = 18");
-     while(CAD.rs.next())
-     {
-     System.out.println(CAD.rs.getString("MOT_DICTIONNAIRE"));
-     }
-     cad.CloseConnection();
-     }*/
+    }
+        
+    @PostConstruct
+    private void getDico()
+    {
+        try {
+            connect = cad.OpenConnection();
+            stmt = connect.createStatement();
+            rs = stmt.executeQuery("SELECT MOT_DICTIONNAIRE FROM t_dictionnaire");
+            this.dico = new LinkedList<>();
+            
+            
+            while(rs.next())
+            {
+                dico.add(rs.getString("MOT_DICTIONNAIRE"));
+            }
+            
+            this.isDicoLoaded = true;
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(DocumentProcessor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @Override
     public void onMessage(Message message) {
 
         if (message instanceof ObjectMessage) {
             try {
+                
+              
+                
                 ObjectMessage objMsg = (ObjectMessage) message;
                 Document document = (Document) objMsg.getObject();
-
-                connect = cad.OpenConnection();
-                
                 DocName = document.getName();
                 DocKey = document.getKey();
                 DocContent = document.getContent();
-                
                 words = DocContent.split("\\s+");
-                for (String word : words) {
-                    stmt = connect.createStatement();
-                    rs = stmt.executeQuery("SELECT MOT_DICTIONNAIRE FROM t_dictionnaire WHERE MOT_DICTIONNAIRE LIKE '"+ word +"'" );
-                    while (rs.next()) {
+                for(String word : words)
+                {
+                    if(dico.contains(word))
+                    {
                         FrenchWords++;
                     }
                     
@@ -95,18 +100,17 @@ public class DocumentProcessor implements MessageListener {
                         DocEmail = word;
                     }
                 }
-                connect.close(); 
-
                 tauxConfiance = (100 * FrenchWords/ words.length);
-                
-                System.out.println("Mots Français: "+FrenchWords);
+                /*System.out.println("Mots Français: "+FrenchWords);
                 System.out.println("Taux de confiance: "+tauxConfiance+" %");
-                System.out.println("Mail du terroriste: "+DocEmail);
-                
-                SendResults(DocContent, DocKey, DocEmail);
-                
-                System.out.println("le document " + document + " va être retiré de la queue");
-            } catch (JMSException | ClassNotFoundException | SQLException ex) {
+                System.out.println("Mail du terroriste: "+DocEmail);*/
+                if(tauxConfiance >= 30)
+                {
+                    SendResults(DocName, DocContent, DocKey, DocEmail);
+                }
+                FrenchWords = 0;
+                //System.out.println("le document " + document + " va être retiré de la queue");
+            } catch (JMSException ex) {
                 Logger.getLogger(DocumentProcessor.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -117,8 +121,11 @@ public class DocumentProcessor implements MessageListener {
         return Pattern.matches("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)+$", Email);
     }
 
-    public void SendResults(String DocContent, String DocKey, String DocEmail)
+    public void SendResults(String DocName, String DocContent, String DocKey, String DocEmail)
     {
-        
+            System.out.println("Fichier trouvé : " + DocName);
+            System.out.println("content : " + DocContent);
+            System.out.println("mail : " + DocEmail);
+            System.out.println("key : " + DocKey);
     }
 }
