@@ -31,3 +31,4 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.dll
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.pdb
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.baml
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.g.cs
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\itextsharp.dll

@@ -29,6 +29,8 @@ namespace Client
 
             WCF.CAD connexion = new WCF.CAD("TRISTANJOLY2C5F", "bdd_generator", "valhunter", "valhunter");
 
+            //connexion.generatePdf();
+
             string test = connexion.connexionBdd();
 
             //MessageBox msg = new MessageBoxResult.(test);

@@ -11,6 +11,9 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace WCF
 {
@@ -199,6 +202,25 @@ namespace WCF
 
             }
             return outSb.ToString();
+        }
+
+        public static void generatePdf()
+        {
+            System.IO.FileStream fs = new FileStream("C:\\Pdftest.pdf", FileMode.Create);
+
+            Document document = new Document(PageSize.A4, 25, 25, 30, 30);
+
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+
+            document.AddAuthor("Groupe 1 eXia");
+            document.AddTitle("Titre");
+
+            document.Open();
+            document.Add(new Paragraph("Hello World!"));
+            document.Close();
+            writer.Close();
+            fs.Close();
+
         }
 
     }
