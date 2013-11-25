@@ -26,9 +26,17 @@ namespace Client
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
+
+            WCF.CAD connexion = new WCF.CAD("TRISTANJOLY2C5F", "bdd_generator", "valhunter", "valhunter");
+
+            string test = connexion.connexionBdd();
+
+            //MessageBox msg = new MessageBoxResult.(test);
+            MessageBoxResult m = MessageBox.Show(test);
+
+            /*MainWindow main = new MainWindow();
             this.Close();
-            main.Show();
+            main.Show();*/
         }
     }
 }

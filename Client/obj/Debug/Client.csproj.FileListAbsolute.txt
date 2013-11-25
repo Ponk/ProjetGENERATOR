@@ -27,3 +27,7 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb
 \\psf\Dropbox\ProjetGENERATOR\Client\obj\Debug\Client.g.resources
 \\psf\Dropbox\ProjetGENERATOR\Client\obj\Debug\Client.Properties.Resources.resources
 \\psf\Dropbox\ProjetGENERATOR\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.dll
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.pdb
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.baml
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.g.cs
