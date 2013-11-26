@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.4.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -72,6 +76,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAD.cs" />
+    <Compile Include="CM_Utilisateur.cs" />
+    <Compile Include="EM_Utilisateur.cs" />
     <Compile Include="Service References\GenService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
