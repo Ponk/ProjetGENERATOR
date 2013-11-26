@@ -73,7 +73,7 @@ public class GenService {
     public boolean processSendDocument(@WebParam(name = "name") String name, @WebParam(name = "content") String content, @WebParam(name = "key") String key)
     {
         //System.out.println(name +" envoyé avec succès !");
-        System.out.println("test code : " + count);
+        System.out.println("Test key : " + count);
         count--;
         sendDocument(name, content, key);
         return true;

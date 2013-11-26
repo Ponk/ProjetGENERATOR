@@ -7,12 +7,15 @@ package com.gen.businnes.logic;
 
 import business.domain.Document;
 import com.gen.data.cad.CAD;
+import static java.lang.Math.floor;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -45,7 +48,6 @@ public class DocumentProcessor implements MessageListener {
     public String DocKey;
     public String[] words;
     public List<String> dico;
-    public boolean isDicoLoaded = false;
     
     public CAD cad = new CAD("jdbc:mysql://localhost/dictionnairebdd", "root", "");
 
@@ -59,56 +61,71 @@ public class DocumentProcessor implements MessageListener {
         try {
             connect = cad.OpenConnection();
             stmt = connect.createStatement();
-            rs = stmt.executeQuery("SELECT MOT_DICTIONNAIRE FROM t_dictionnaire");
-            this.dico = new LinkedList<>();
-            
-            
+            rs = stmt.executeQuery("SELECT MOT_DICTIONNAIRE FROM t_dictionnairefull");
+            this.dico = new ArrayList<>();
             while(rs.next())
             {
                 dico.add(rs.getString("MOT_DICTIONNAIRE"));
             }
             
-            this.isDicoLoaded = true;
+            rs.close();
+            stmt.close();
+            connect.close();
+
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(DocumentProcessor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+        
     @Override
     public void onMessage(Message message) {
 
         if (message instanceof ObjectMessage) {
             try {
-                
-              
-                
+
                 ObjectMessage objMsg = (ObjectMessage) message;
                 Document document = (Document) objMsg.getObject();
                 DocName = document.getName();
                 DocKey = document.getKey();
                 DocContent = document.getContent();
+                
+                String delims = " ,()[].;' \"\\/<>&²0123456789*+$€_-~µ£¨^:!?";
+                String splitString = DocContent;
+                StringTokenizer st = new StringTokenizer(splitString, delims);
+                
                 words = DocContent.split("\\s+");
-                for(String word : words)
+
+                FrenchWords = 0;
+
+                while (st.hasMoreElements())
                 {
-                    if(dico.contains(word))
+                    if(dico.contains(st.nextElement()))
                     {
                         FrenchWords++;
                     }
-                    
+                }
+
+                for(String word : words)
+                {
                     if(isEmail(word))
                     {
                         DocEmail = word;
                     }
+
                 }
+                    
                 tauxConfiance = (100 * FrenchWords/ words.length);
-                /*System.out.println("Mots Français: "+FrenchWords);
+
+                System.out.println("Mots Français: "+FrenchWords);
                 System.out.println("Taux de confiance: "+tauxConfiance+" %");
-                System.out.println("Mail du terroriste: "+DocEmail);*/
-                if(tauxConfiance >= 30)
+                System.out.println("Mail du terroriste: "+DocEmail);
+                
+                if(tauxConfiance >= 10)
                 {
                     SendResults(DocName, DocContent, DocKey, DocEmail);
                 }
                 FrenchWords = 0;
+                DocEmail = "";
                 //System.out.println("le document " + document + " va être retiré de la queue");
             } catch (JMSException ex) {
                 Logger.getLogger(DocumentProcessor.class.getName()).log(Level.SEVERE, null, ex);

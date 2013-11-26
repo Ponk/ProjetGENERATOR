@@ -24,7 +24,8 @@ namespace WCF
         [OperationContract]
         string authentification(string login, string mdp, string token);
 
-        // TODO: ajoutez vos opérations de service ici
+        [OperationContract]
+        void EncryptDecrypt(string chaine);
     }
 
 
