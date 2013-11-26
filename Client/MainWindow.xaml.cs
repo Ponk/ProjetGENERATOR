@@ -46,11 +46,16 @@ namespace Client
             {
                 // Open document 
                 string file = dlg.SafeFileName;
-                textBox1.Text = file;
+                // textBox1.Text = file;
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
 
         }
