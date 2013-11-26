@@ -111,6 +111,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\gen_logo.jpg" />
+    <Folder Include="CUC\" />
+    <Folder Include="CUP\" />
+    <Folder Include="CUT\" />
+    <Folder Include="CU\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

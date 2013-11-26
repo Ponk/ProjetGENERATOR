@@ -76,9 +76,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CAD.cs" />
-    <Compile Include="CM_Utilisateur.cs" />
-    <Compile Include="EM_Utilisateur.cs" />
+    <Compile Include="CAD\CAD.cs" />
+    <Compile Include="CAM\CAM_Utilisateur.cs" />
+    <Compile Include="CM\CM_Utilisateur.cs" />
+    <Compile Include="CW\CW_Utilisateur.cs" />
+    <Compile Include="EM\EM_Utilisateur.cs" />
     <Compile Include="Service References\GenService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SERVC\" />
+    <Folder Include="SERVM\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

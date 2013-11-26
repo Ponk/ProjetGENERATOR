@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\bin\WCF.dll
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\bin\WCF.pdb
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\Wcf.csprojResolveAssemblyReference.cache
@@ -14,3 +15,16 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\bin\itextsharp.dll
 \\psf\Dropbox\ProjetGENERATOR\WCF\obj\Debug\Wcf.csprojResolveAssemblyReference.cache
 \\psf\Dropbox\ProjetGENERATOR\WCF\obj\Debug\WCF.dll
 \\psf\Dropbox\ProjetGENERATOR\WCF\obj\Debug\WCF.pdb
+=======
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\bin\WCF.dll
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\bin\WCF.pdb
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\Wcf.csprojResolveAssemblyReference.cache
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\WCF.dll
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\WCF.pdb
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\bin\WCF.dll
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\bin\WCF.pdb
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\WCF.dll
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\WCF.pdb
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\bin\itextsharp.dll
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\Wcf.csprojResolveAssemblyReference.cache
+>>>>>>> Ajout nouvelles couches

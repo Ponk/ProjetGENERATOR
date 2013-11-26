@@ -20,14 +20,14 @@ namespace Client
     public partial class Login : Window
     {
         private System.Data.DataSet oDS;
-        private WCF.CM_Utilisateur oUtilisateur;
+        private WCF.CAM.CAM_Utilisateur oUtilisateur;
 
 
         public Login()
         {
             InitializeComponent();
             this.oDS = new System.Data.DataSet();
-            this.oUtilisateur = new WCF.CM_Utilisateur();
+            this.oUtilisateur = new WCF.CAM.CAM_Utilisateur();
         }
 
      
@@ -41,7 +41,7 @@ namespace Client
             string token_app = "rouen76";
             string tokenUtilisateur;
 
-            this.oDS = this.oUtilisateur.selectUser("row", "jackr", "test");
+            this.oDS = this.oUtilisateur.CAM_selectUser("row", "gfd", "blabla");
 
             if (this.oDS.Tables[0].Rows.Count == 0)
             {

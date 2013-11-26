@@ -18,13 +18,7 @@ namespace WCF
     [ServiceContract]
     public interface IService1
     {
-
-        [OperationContract]
-        string decrypter(string cheminFichier);
-
-        [OperationContract]
-        string authentification(string login, string mdp, string token);
-
+                
         [OperationContract]
         void EncryptDecrypt(string chaine);
     }
