@@ -39,8 +39,9 @@ namespace Client
             string mdp;
             string token;
             string token_app = "rouen76";
+            string tokenUtilisateur;
 
-            this.oDS = this.oUtilisateur.selectUser("row", "aze", "blabla");
+            this.oDS = this.oUtilisateur.selectUser("row", "jackr", "test");
 
             if (this.oDS.Tables[0].Rows.Count == 0)
             {
@@ -49,10 +50,10 @@ namespace Client
             }
             else
             {
-
-                login = this.oDS.Tables[0].Rows[0][0].ToString();
-                mdp = this.oDS.Tables[0].Rows[0][1].ToString();
-                token = this.oDS.Tables[0].Rows[0][2].ToString();
+                tokenUtilisateur = this.oDS.Tables[0].Rows[0][0].ToString();
+                login = this.oDS.Tables[0].Rows[0][1].ToString();
+                mdp = this.oDS.Tables[0].Rows[0][2].ToString();
+                token = this.oDS.Tables[0].Rows[0][3].ToString();
 
                 if (token != token_app)
                 {
@@ -60,7 +61,7 @@ namespace Client
                 }
                 else
                 {
-                    MessageBoxResult m = MessageBox.Show(token);
+                    MessageBoxResult m = MessageBox.Show(tokenUtilisateur);
                 }
 
             }
