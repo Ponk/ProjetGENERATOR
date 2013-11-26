@@ -19,25 +19,48 @@ namespace Client
     /// </summary>
     public partial class Login : Window
     {
+        private System.Data.DataSet oDS;
+        private WCF.CM_Utilisateur oUtilisateur;
+
+
         public Login()
         {
             InitializeComponent();
+            this.oDS = new System.Data.DataSet();
+            this.oUtilisateur = new WCF.CM_Utilisateur();
         }
+
+     
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            WCF.CAD connexion = new WCF.CAD("TRISTANJOLY2C5F", "bdd_generator", "valhunter", "valhunter");
+            string login;
+            string mdp;
+            string token;
 
-            //connexion.generatePdf();
+            this.oDS = this.oUtilisateur.selectUser("row", "jackr", "test");
+            login = this.oDS.Tables[0].Rows[0][0].ToString();
+            mdp = this.oDS.Tables[0].Rows[0][1].ToString();
+            token = this.oDS.Tables[0].Rows[0][2].ToString();
+
+            if (login == null)
+            {
+                MessageBoxResult m = MessageBox.Show("erreur");
+            }
+            else
+            {
+                MessageBoxResult m = MessageBox.Show(token);
+            }
 
             
 
-            string test = connexion.connexionBdd();
+            //connexion.generatePdf();
 
-            //MessageBox msg = new MessageBoxResult.(test);
-            MessageBoxResult m = MessageBox.Show(test);
+            //string mail = connexion.sendMail();
 
+            
+            
             /*MainWindow main = new MainWindow();
             this.Close();
             main.Show();*/

@@ -8,32 +8,58 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Web.Mail;
 using System.Text;
+using System.Net.Mail;
 
 namespace WCF
 {
     public class CAD
     {
-        SqlConnection maConnexion = null;
-        string serveur;
-        string bdd;
-        string login;
-        string mdp;
+        
+        /*private string serveur;
+        private string bdd;
+        private string login;
+        private string mdp;*/
+
+        private string rq_sql;
+        private SqlConnection maConnexion;
+        private SqlCommand maCommande;
+        private System.Data.DataSet oDS;
+        private SqlDataAdapter oDA;
+        //private SqlDataReader oReader;
 
         public CAD(string serveur, string bdd, string login, string mdp)
         {
-            this.serveur = serveur;
+            this.rq_sql = null;
+            this.maCommande = null;
+            //this.oReader = null;
+            /*this.serveur = serveur;
             this.bdd = bdd;
             this.login = login;
-            this.mdp = mdp;
+            this.mdp = mdp;*/
+
+            maConnexion = new SqlConnection("Data Source= '" + serveur + "';Initial Catalog= '" + bdd + "';User Id= '" + login + "';Password= '" + mdp + "'");
+
         }
 
-        public string connexionBdd()
+        public System.Data.DataSet getRows(string rq_sql, string rows)
+        {
+            this.oDS = new System.Data.DataSet();
+            this.rq_sql = rq_sql;
+            this.maCommande = new SqlCommand(this.rq_sql, this.maConnexion);
+            this.oDA = new SqlDataAdapter(this.maCommande);
+            this.oDA.Fill(this.oDS, "rows");
+            return this.oDS;
+
+        }
+
+
+       /* public string connexionBdd()
         {
             try
             {
                 
-                maConnexion = new SqlConnection("Data Source= '" + serveur + "';Initial Catalog= '" + bdd + "';User Id= '" + login + "';Password= '" + mdp + "'");
                 
+
                 SqlCommand maCommande = new SqlCommand();
                 maCommande.Connection = maConnexion;
 
@@ -87,7 +113,7 @@ namespace WCF
 
             }
 
-        }
+        }*/
 
             public void generatePdf()
             {
@@ -119,46 +145,36 @@ namespace WCF
         /// <param name="InHTML">Body Mail in HTML or not</param>
         /// <returns>Send Mail sent OK ou Error</returns>
 
-            public string sendMail(StringBuilder Contenu, string Subject, string MailTo, string MailFrom, string SMTPServer, bool InHTML)
+            /*public string sendMail()
             {
-                string retour = string.Empty;
-                MailMessage msg = null;
-                System.Text.Encoding myEncoding = System.Text.Encoding.GetEncoding("iso-8859-1");
-                try
-                {
-                    msg = new MailMessage();
-                    msg.Body = Contenu.ToString();
-                    msg.BodyEncoding = myEncoding;
-                    if (InHTML)
-                    {
-                        msg.BodyFormat = MailFormat.Html;
-                    }
-                    else
-                    {
-                        msg.BodyFormat = MailFormat.Text;
-                    }
+                
+                MailSettings.SMTPServer = Convert.ToString(ConfigurationManager.AppSettings["HostName"]);
+                MailMessage Msg = new MailMessage();
+                // Sender e-mail address.
+                Msg.From = new MailAddress("pqr@gmail.com");
+                // Recipient e-mail address.
+                Msg.To.Add("abc@gmail.com");
+                Msg.CC.Add("zcd@gmail.com");
+                Msg.Subject = "Timesheet Payment Instruction updated";
+                Msg.IsBodyHtml = true;
+                Msg.Body = emailMessage.ToString();
+                NetworkCredential loginInfo = new NetworkCredential(Convert.ToString(ConfigurationManager.AppSettings["UserName"]), Convert.ToString(ConfigurationManager.AppSettings["Password"])); // password for connection smtp if u dont have have then pass blank
 
-                    msg.Subject = Subject;
-                    msg.From = MailFrom;
-                    msg.To = MailTo;
-                    SmtpMail.SmtpServer = SMTPServer;
-                    SmtpMail.Send(msg);
-                    retour = "Mail sent to " + MailTo;
-                }
-                catch(Exception ex)
-                {
-                    retour = "Error in Sendmail function - Details : "+ ex.ToString();
-                }
-                finally
-	            {
-		            msg = null;
-		            myEncoding = null;
-	            }
-	            return retour;
- 
+                SmtpClient smtp = new SmtpClient();
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = loginInfo;
+                //smtp.EnableSsl = true;
+                //No need for port
+                //smtp.Host = ConfigurationManager.AppSettings["HostName"];
+                //smtp.Port = int.Parse(ConfigurationManager.AppSettings["PortNumber"]);
+                smtp.Send(Msg);
 
+                
 
-                }
+                return email.ToString();
+
+            }*/
+
 
                
             
