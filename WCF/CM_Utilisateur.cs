@@ -13,7 +13,7 @@ namespace WCF
 
         public CM_Utilisateur()
         {
-            this.oCAD = new CAD("TRISTANJOLY2C5F", "bdd_generator", "valhunter", "valhunter");
+            this.oCAD = new CAD();
             this.oUtilisateur = new EM_Utilisateur();
 
         }
