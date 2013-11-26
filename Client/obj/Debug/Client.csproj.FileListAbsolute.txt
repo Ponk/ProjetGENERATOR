@@ -45,3 +45,5 @@ C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.g.r
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.Properties.Resources.resources
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.csproj.GenerateResource.Cache
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\itextsharp.dll
+\\psf\Dropbox\ProjetGENERATOR\Client\bin\Debug\WCF.dll
+\\psf\Dropbox\ProjetGENERATOR\Client\bin\Debug\WCF.pdb

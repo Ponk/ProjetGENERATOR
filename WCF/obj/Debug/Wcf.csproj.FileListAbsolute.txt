@@ -9,3 +9,8 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\Wcf.csprojResol
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\WCF.dll
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\obj\Debug\WCF.pdb
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\WCF\bin\itextsharp.dll
+\\psf\Dropbox\ProjetGENERATOR\WCF\bin\WCF.dll
+\\psf\Dropbox\ProjetGENERATOR\WCF\bin\WCF.pdb
+\\psf\Dropbox\ProjetGENERATOR\WCF\obj\Debug\Wcf.csprojResolveAssemblyReference.cache
+\\psf\Dropbox\ProjetGENERATOR\WCF\obj\Debug\WCF.dll
+\\psf\Dropbox\ProjetGENERATOR\WCF\obj\Debug\WCF.pdb
