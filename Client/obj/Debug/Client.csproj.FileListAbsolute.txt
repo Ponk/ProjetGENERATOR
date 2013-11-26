@@ -32,3 +32,16 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.pdb
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.baml
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.g.cs
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\itextsharp.dll
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.exe
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.baml
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\MainWindow.baml
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.g.cs
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\MainWindow.g.cs
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\App.g.cs
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client_MarkupCompile.cache
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.g.resources
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.csproj.GenerateResource.Cache
