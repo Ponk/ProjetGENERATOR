@@ -38,22 +38,32 @@ namespace Client
             string login;
             string mdp;
             string token;
+            string token_app = "rouen76";
 
-            this.oDS = this.oUtilisateur.selectUser("row", "jackr", "test");
-            login = this.oDS.Tables[0].Rows[0][0].ToString();
-            mdp = this.oDS.Tables[0].Rows[0][1].ToString();
-            token = this.oDS.Tables[0].Rows[0][2].ToString();
+            this.oDS = this.oUtilisateur.selectUser("row", "aze", "blabla");
 
-            if (login == null)
+            if (this.oDS.Tables[0].Rows.Count == 0)
             {
-                MessageBoxResult m = MessageBox.Show("erreur");
+                MessageBoxResult m = MessageBox.Show("pas d'utilisateur trouvé");
+
             }
             else
             {
-                MessageBoxResult m = MessageBox.Show(token);
-            }
 
-            
+                login = this.oDS.Tables[0].Rows[0][0].ToString();
+                mdp = this.oDS.Tables[0].Rows[0][1].ToString();
+                token = this.oDS.Tables[0].Rows[0][2].ToString();
+
+                if (token != token_app)
+                {
+                    MessageBoxResult m = MessageBox.Show("erreur token");
+                }
+                else
+                {
+                    MessageBoxResult m = MessageBox.Show(token);
+                }
+
+            }
 
             //connexion.generatePdf();
 
