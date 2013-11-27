@@ -20,47 +20,76 @@ namespace WCF
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service1 : IService1
     {
-        
-                
         private string GetFileContent(string path)
         {
             StreamReader myFile = new StreamReader(path, Encoding.UTF8);
-            
             return myFile.ReadToEnd();
         }
 
         public void EncryptDecrypt(string path)
         {
+            GenServiceClient client = new GenServiceClient();
             FileInfo file = new FileInfo(path);
             string chaineCodee = this.GetFileContent(path);
             string cleanString = "";
 
-            string key;
+            //for (int key = 0; key < 10000; key++)
+            for (int key = int.Parse("1300"); key > int.Parse("1250"); key--)
+			{
+			    //Application d'une clé
+                cleanString = this.ApplyKey(chaineCodee, key.ToString());
+
+                if (isTextValid(cleanString))
+                {
+                    //Envoi d'un texte décrypté au service Java EE
+                    cleanString = Regex.Replace(cleanString, @"[^a-zA-ZéèàêùÇÈÉÀçïî@.\[\]_]", " ");
+                    client.SendDocumentOperation(file.Name, cleanString, key.ToString());
+                }
+			}
+        }            
+
+        private string ApplyKey(string text, string key)
+        {
             var result = new StringBuilder();
 
-            GenServiceClient client = new GenServiceClient();
-
-            for (int i = 1298; i <= 1298; i++)
+            for (int c = 0; c < text.Length; c++)
             {
-                key = i.ToString();
-                for (int c = 0; c < chaineCodee.Length; c++)
-                {
-                    char character = chaineCodee[c];
-                    uint charCode = (uint)character;
+                char character = text[c];
+                uint charCode = (uint)character;
 
-                    int keyPosition = c % key.Length;
-                    char keyChar = key[keyPosition];
+                int keyPosition = c % key.Length;
+                char keyChar = key[keyPosition];
 
-                    uint keyCode = (uint)keyChar;
-                    uint combinedCode = charCode ^ keyCode;
-                    char combinedChar = (char)combinedCode;
+                uint keyCode = (uint)keyChar;
+                uint combinedCode = charCode ^ keyCode;
+                char combinedChar = (char)combinedCode;
 
-                    result.Append(combinedChar);
-                    cleanString = Regex.Replace(result.ToString(), @"[^a-zA-ZéèàêùÇÈÉÀçïî@.\[\]_]", " ");
-                }
+                result.Append(combinedChar); 
+            }
 
-                client.SendDocumentOperation(file.Name, cleanString, key);
-            }            
+            //return Regex.Replace(result.ToString(), @"[^a-zA-ZéèàêùÇÈÉÀçïî@.\[\]_]", " ");
+            return result.ToString();
+        }
+
+        private bool isTextValid(string text)
+        {
+            Char[] badChars = { '#', '|', '>', '~', 'Á', 'Ã', 'Ä', 'Å', 'Æ', 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', 'Õ', 'Ö', 'Ø', 'Œ', 'Š', 'þ', 'Ý', 'Ÿ', 'á', 'ã', 'ä', 'å', 'æ', 'ð', 'ñ', 'ò', 'ó', 'õ', 'ö', 'ø', 'š', 'Þ', 'ý', 'ÿ', '¢', 'ß', '¥', '£', '™', '©', '®', 'ª', '¼', '½', '¾', 'º', '§', '¤', '¦', '¬', '‰' };
+            //Char[] badChars = { '#', '|', '<', '>', '~', 'Á', 'Ã', 'Ä', 'Å', 'Æ' };
+            //Char[] badChars = { 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', 'Õ', 'Ö' };
+            //Char[] badChars = { 'Ø', 'Œ', 'Š', 'þ', 'Ý', 'Ÿ', 'á', 'ã', 'ä', 'å' };
+            //Char[] badChars = { 'æ', 'ð', 'ñ', 'ò', 'ó', 'õ', 'ö', 'ø', 'š', 'Þ' };
+            //Char[] badChars = { 'ý', 'ÿ', '¢', 'ß', '¥', '£', '™', '©', '®', 'ª' };
+            //Char[] badChars = { '¼', '½', '¾', 'º', '§', '¤', '¦', '¬', '‰' };
+            //return badChars.Any(c => text.Contains(c));
+
+            if (badChars.Any(l => text.Contains(l)))
+                return false;
+            else
+                return true;
+                
+
+            //bool match = text.IndexOfAny(badChars) != -1;
+            //return match;
         }
     }
 }

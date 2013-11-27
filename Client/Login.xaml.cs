@@ -41,7 +41,7 @@ namespace Client
             string token_app = "rouen76";
             string tokenUtilisateur;
 
-            this.oDS = this.oUtilisateur.CAM_selectUser("row", "gfd", "blabla");
+            this.oDS = this.oUtilisateur.CAM_selectUser("row", "jackr", "test");
 
             if (this.oDS.Tables[0].Rows.Count == 0)
             {

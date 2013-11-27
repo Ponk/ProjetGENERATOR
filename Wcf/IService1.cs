@@ -10,7 +10,6 @@ using System.IO;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using System.ServiceModel.Description;
 
 namespace WCF
 {
@@ -18,7 +17,6 @@ namespace WCF
     [ServiceContract]
     public interface IService1
     {
-                
         [OperationContract]
         void EncryptDecrypt(string chaine);
     }
