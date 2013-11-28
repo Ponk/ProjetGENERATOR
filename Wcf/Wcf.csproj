@@ -69,22 +69,41 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ServiceCom\ServiceCom.disco" />
+    <None Include="Service References\ServiceCom\configuration91.svcinfo" />
+    <None Include="Service References\ServiceCom\configuration.svcinfo" />
+    <None Include="Service References\ServiceCom\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="Service References\GenService\WCF.GenService.SendDocumentOperationResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\ServiceCom\ServiceCom.wsdl" />
+    <None Include="Service References\ServiceCom\ServiceCom.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceCom\ServiceCom1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceCom\ServiceCom2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAD\CAD.cs" />
-    <Compile Include="CAM\CAM_Decryptage.cs" />
     <Compile Include="CAM\CAM_Utilisateur.cs" />
-    <Compile Include="CM\CM_Decryptage.cs" />
     <Compile Include="CM\CM_Utilisateur.cs" />
-    <Compile Include="CW\CW_Decryptage.cs" />
     <Compile Include="CW\CW_Utilisateur.cs" />
     <Compile Include="EM\EM_Utilisateur.cs" />
     <Compile Include="Service References\GenService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceCom\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -105,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\GenService\" />
+    <WCFMetadataStorage Include="Service References\ServiceCom\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\GenService\GenService.wsdl" />

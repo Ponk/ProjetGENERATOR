@@ -2,6 +2,7 @@ c:\users\ponk\documents\visual studio 2012\Projects\ProjetGENERATOR\Client\bin\D
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.pdb
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\MainWindow.baml
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\MainWindow.g.cs
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\App.g.cs
@@ -26,11 +27,18 @@ C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb
 \\psf\Dropbox\ProjetGENERATOR\Client\obj\Debug\Client.g.resources
 \\psf\Dropbox\ProjetGENERATOR\Client\obj\Debug\Client.Properties.Resources.resources
 \\psf\Dropbox\ProjetGENERATOR\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.dll
+C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.pdb
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.baml
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.g.cs
 C:\Users\Valentin\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\itextsharp.dll
 \\psf\Dropbox\ProjetGENERATOR\Client\bin\Debug\WCF.dll
 \\psf\Dropbox\ProjetGENERATOR\Client\bin\Debug\WCF.pdb
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.pdb
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.dll
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\WCF.pdb
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Login.baml
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\MainWindow.baml
@@ -41,6 +49,5 @@ C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client_Mar
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.g.resources
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.Properties.Resources.resources
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.csproj.GenerateResource.Cache
-C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\bin\Debug\Client.exe.config
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.exe
 C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\Client\obj\Debug\Client.pdb

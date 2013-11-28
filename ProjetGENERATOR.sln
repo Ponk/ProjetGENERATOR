@@ -2,11 +2,15 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{87A030F9-A627-4F10-ACC8-1657C0EC9F1F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A15B5252-F65B-401A-AE0F-26E2F470EA07} = {A15B5252-F65B-401A-AE0F-26E2F470EA07}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wcf", "WCF\Wcf.csproj", "{A15B5252-F65B-401A-AE0F-26E2F470EA07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B60F2793-5F69-4E16-B452-7502C543430B} = {B60F2793-5F69-4E16-B452-7502C543430B}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pdf", "pdf", "{E766DC1D-48C8-49A8-BD42-C43E2EE06040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFCommunication", "WCFCommunication\WCFCommunication.csproj", "{B60F2793-5F69-4E16-B452-7502C543430B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +26,10 @@ Global
 		{A15B5252-F65B-401A-AE0F-26E2F470EA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A15B5252-F65B-401A-AE0F-26E2F470EA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A15B5252-F65B-401A-AE0F-26E2F470EA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B60F2793-5F69-4E16-B452-7502C543430B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60F2793-5F69-4E16-B452-7502C543430B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60F2793-5F69-4E16-B452-7502C543430B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60F2793-5F69-4E16-B452-7502C543430B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
