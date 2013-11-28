@@ -58,7 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service References\WCFGenService\Reference.cs">
+    <Compile Include="Service References\WcfDecrypt\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -75,7 +75,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Document.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -101,31 +100,27 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\WCFGenService\Service1.wsdl" />
-    <None Include="Service References\WCFGenService\Service1.xsd">
+    <None Include="Service References\WcfDecrypt\Service1.wsdl" />
+    <None Include="Service References\WcfDecrypt\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WCFGenService\Service11.xsd">
+    <None Include="Service References\WcfDecrypt\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WCFGenService\Service12.xsd">
+    <None Include="Service References\WcfDecrypt\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WCF\Wcf.csproj">
-      <Project>{a15b5252-f65b-401a-ae0f-26e2f470ea07}</Project>
-      <Name>Wcf</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\gen_logo.jpg" />
@@ -141,19 +136,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\WCFGenService\" />
+    <WCFMetadataStorage Include="Service References\WcfDecrypt\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\WCFGenService\Service1.disco" />
+    <None Include="Service References\WcfDecrypt\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\WCFGenService\configuration91.svcinfo" />
+    <None Include="Service References\WcfDecrypt\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\WCFGenService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WCFGenService\Reference.svcmap">
+    <None Include="Service References\WcfDecrypt\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
