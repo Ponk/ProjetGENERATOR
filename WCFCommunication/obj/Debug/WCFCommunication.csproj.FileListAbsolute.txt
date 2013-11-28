@@ -1,0 +1,5 @@
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCFCommunication\bin\WCFCommunication.dll
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCFCommunication\bin\WCFCommunication.pdb
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCFCommunication\obj\Debug\WCFCommunication.dll
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCFCommunication\obj\Debug\WCFCommunication.pdb
+C:\Users\Hubiquitos\Documents\GitHub\ProjetGENERATOR\WCFCommunication\obj\Debug\WCFCommunication.csprojResolveAssemblyReference.cache
